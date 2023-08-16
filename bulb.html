@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>www.bulbglow.com</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            border: none;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+        #container{
+            background-color: aqua;
+            width: 85%;
+            max-width: 300px;
+            margin: 10px auto;
+            aspect-ratio: 1/1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #rec1, #rec2, #rec3, #rec4{
+            
+            border: 2px solid black;
+            border-radius: 4px;
+        }
+        #rec1{
+            width: 10px;
+            height: 15px;
+        }
+        #rec2{
+            width: 20px;
+            height: 25px;
+        }
+        #rec3{
+            width: 30px;
+            height: 35px;
+        }
+        #rec4{
+            width: 80px;
+            height: 85px;
+            border-radius: 50px;
+
+        }
+        #rec5{
+            /* background-color: aquamarine; */
+            /* removal */
+
+            width: 100px;
+            height: 30px;
+            display: flex;
+            justify-content: space-between;
+            visibility: hidden;
+        }
+        #l1{
+            width: 2px;
+            height: auto;
+            background-color: black;
+            transform: rotate(60deg);
+        }
+        #l2{
+            width: 2px;
+            height: auto;
+            background-color: black;
+            transform: rotate(40deg);
+        }
+        #l3{
+            width: 2px;
+            height: auto;
+            background-color: black;
+            transform: rotate(20deg);
+        }
+        #l4{
+            width: 2px;
+            height: auto;
+            background-color: black;
+            transform: rotate(0deg);
+        }#l5{
+            width: 2px;
+            height: auto;
+            background-color: black;
+            transform: rotate(-20deg);
+        }
+        #l6{
+            width: 2px;
+            height: auto;
+            background-color: black;
+            transform: rotate(-40deg);
+        }
+        #l7{
+            width: 2px;
+            height: auto;
+            background-color: black;
+            transform: rotate(-60deg);
+        }
+        #switchBtn{
+            background-color: rgb(138, 136, 134);
+            align-self: baseline;
+            cursor: pointer;
+            width: 80px;
+            height: 40px;
+        }
+        #switchBtn:hover{
+            background-color: white;
+        }
+
+        #exp{
+            background-color: aquamarine;
+            width: 300px;
+            height: 200px;
+            margin: 10px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            overflow: hidden;
+            border-radius: 50%;
+            /* box-shadow: 0 40px 0 black; */
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="rec1"></div>
+        <div id="rec2"></div>
+        <div id="rec3"></div>
+        <div id="rec4"></div>
+        <div id="rec5">
+            <div id="l1"></div>
+            <div id="l2"></div>
+            <div id="l3"></div>
+            <div id="l4"></div>
+            <div id="l5"></div>
+            <div id="l6"></div>
+            <div id="l7"></div>
+        </div>
+        <button id="switchBtn"></button>
+    </div>
+    
+    <script>
+        const switchBtn=document.getElementById('switchBtn');
+        let switchedOn=false;
+        switchBtn.innerHTML='Switched Off';
+        switchBtn.addEventListener('click',()=>{
+            if(switchedOn==false){
+                switchBtn.style.backgroundColor='white';
+                document.getElementById('rec4').style.backgroundColor='yellow';
+                document.getElementById('rec5').style.visibility='visible';
+                switchBtn.innerHTML='Switched On';
+                switchedOn=true;
+            }
+            else{
+                switchBtn.style.backgroundColor='rgb(138, 136, 134)';
+                document.getElementById('rec4').style.backgroundColor='';
+                document.getElementById('rec5').style.visibility='hidden';
+                switchBtn.innerHTML='Switched Off';
+                switchedOn=false;
+            }
+        });
+    </script>
+</body>
+</html>
